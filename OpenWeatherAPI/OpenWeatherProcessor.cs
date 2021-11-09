@@ -89,7 +89,12 @@ namespace OpenWeatherAPI
             {
                 throw new ArgumentException("ApiKey is null or empty");
             }
-            
+
+            if (ApiHelper.ApiClient == null)
+            {
+                throw new ArgumentException("Le client http n'est pas initialise");
+            }
+
             EndPoint = $"/weather?";
 
             /// Src : https://stackoverflow.com/a/14517976/503842
