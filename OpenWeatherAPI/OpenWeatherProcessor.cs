@@ -80,6 +80,11 @@ namespace OpenWeatherAPI
         /// <returns></returns>
         public async Task<OWCurrentWeaterModel> GetCurrentWeatherAsync()
         {
+            if (ApiKey == null || ApiKey == "")
+            {
+                throw new ArgumentException("ApiKey is null or empty");
+            }
+            
             EndPoint = $"/weather?";
 
             /// Src : https://stackoverflow.com/a/14517976/503842
