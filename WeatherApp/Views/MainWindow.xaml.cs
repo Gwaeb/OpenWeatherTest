@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using OpenWeatherAPI;
+using System.Windows;
 using WeatherApp.ViewModels;
 
 namespace WeatherApp
@@ -18,7 +19,9 @@ namespace WeatherApp
 
             vm = new WindDataViewModel();
 
-            DataContext = vm;           
+            DataContext = vm;
+
+            ApiHelper.InitializeClient();
         }
     }
 }
