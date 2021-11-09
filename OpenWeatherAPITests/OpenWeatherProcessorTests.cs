@@ -37,5 +37,6 @@ namespace OpenWeatherAPITests
 
             await Assert.ThrowsAsync<ArgumentException>(openWeatherProcessor.GetCurrentWeatherAsync);
         }
+
     }
 }
